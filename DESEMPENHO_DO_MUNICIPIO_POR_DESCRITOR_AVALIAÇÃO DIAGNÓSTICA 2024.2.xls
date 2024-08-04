@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DESEMPENHO_DO_MUNICIPIO_POR_DESCRITOR_AVALIA&Ccedil;&Atilde;O DIAGN&Oacute;STICA 2024.2</title>
+	<style>
+		@media  screen {
+			* {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 14px;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				text-transform: uppercase;
+			}
+		}
+
+		@media  print {
+
+			* {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: 8px;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				text-transform: uppercase;
+			}
+
+			@page  {
+				size: landscape;
+			}
+
+			.bg-grey {
+				background-color: rgb(212, 212, 212);
+				-webkit-print-color-adjust: exact;
+			}
+
+			.mark {
+				/* background-color: rgb(212, 212, 212); */
+				/* -webkit-print-color-adjust: exact; */
+			}
+
+		}
+
+		body {
+			margin: 2.60cm 1.75cm 1.75cm 2.60cm;
+		}
+
+		.table-heading {
+			border-spacing: 0;
+			border-collapse: collapse;
+		}
+
+		.table-heading th,
+		.table-heading td {
+			/* border: 1px solid grey; */
+			text-align: left;
+			padding: 1px;
+		}
+
+		.table-body {
+			border-spacing: 0;
+			border-collapse: collapse;
+		}
+
+		.table-body th,
+		.table-body td {
+			border: 1px solid grey;
+			text-align: center;
+			padding: 2px;
+		}
+
+		.table-footer {
+			border: 1px solid grey;
+			border-spacing: 0;
+			border-collapse: collapse;
+		}
+		.table-footer > thead{
+			border: 1px solid grey;
+		}
+
+		.table-footer > thead > tr > th{
+			text-align: center;
+			padding: 3px;
+		}
+
+		.table-footer > tbody > tr > td {
+			vertical-align: super;
+			padding: 4px;
+			text-align: center;
+		}
+
+		.table-footer table{
+			border-spacing: 0 3px;
+		}
+
+		.table-footer table td{
+			vertical-align: super;
+			/* border: 1px solid red; */
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.text-left {
+			text-align: left !important;
+		}
+
+		.bg-grey {
+			background-color: rgb(212, 212, 212);
+		}
+
+		.w-100 {
+			width: 100%;
+		}
+
+		.border-none {
+			border: 0 !important;
+		}
+
+		.page-break {
+            page-break-after: always !important;
+        }
+
+		.mark td {
+			background-color: rgb(255, 60, 60);
+			color: white;
+		}
+
+		.tr-group {
+			display: table-row-group;
+		}
+
+		.mark {
+			background-color: rgb(255, 255, 28);
+		}
+	</style>
+</head>
+
+<body>
+		<table class="table-body w-100">
+		<thead>
+			<tr class="bg-grey">
+				<th></th>
+				<th colspan="25">
+					SECRETARIA DE EDUCAÇÃO <br>
+					RESULTADO DE DESEMPENHO DAS ESCOLAS POR DESCRITOR <br>
+					AVALIAÇÃO DIAGNÓSTICA - 
+					AVALIA&Ccedil;&Atilde;O DIAGN&Oacute;STICA 2024.2 / 9&ordm; Ano
+				</th>
+			</tr>
+			<tr class="bg-grey">
+				<th></th>
+				<th colspan="25">
+					<b>Total de Alunos Avaliados (Descritores):</b> 
+					11
+					<br>
+					<b>Componente Curricular:</b> Matem&aacute;tica
+				</th>
+			</tr>
+			<tr class="bg-grey">
+				<th></th>
+				<th colspan="25">
+					<b>Total de Escolas:</b> 1
+					<br>
+					<b>Total de Turmas:</b> 1
+				</th>
+			</tr>
+			<tr class="bg-grey">
+				<th></th>
+				<th colspan="25">
+
+				</th>
+			</tr>
+			<tr class="bg-grey">
+				<th></th>
+				<th colspan="25">MÉDIA ACERTOS POR QUESTÃO</th>
+			</tr>
+			<tr class="bg-grey">
+				<th rowspan="3">Escola</th>
+			</tr>
+			<tr class="bg-grey">
+								<th>D3</th>
+								<th>D25</th>
+								<th>D28</th>
+								<th>D15</th>
+								<th>D13</th>
+								<th>D28</th>
+								<th>D8</th>
+								<th>D20</th>
+								<th>D11</th>
+								<th>D26</th>
+								<th>D16</th>
+								<th>D8</th>
+								<th>D26</th>
+								<th>D4</th>
+								<th>D12</th>
+								<th>D14</th>
+								<th>D13</th>
+								<th>D27</th>
+								<th>D15</th>
+								<th>D13</th>
+								<th>D30</th>
+								<th>D24</th>
+								<th>D25*</th>
+								<th>D36</th>
+								<th></th>
+			</tr>
+						<tr class="bg-grey">
+								<th>1ª</th>
+								<th>2ª</th>
+								<th>3ª</th>
+								<th>4ª</th>
+								<th>5ª</th>
+								<th>6ª</th>
+								<th>7ª</th>
+								<th>8ª</th>
+								<th>9ª</th>
+								<th>10ª</th>
+								<th>11ª</th>
+								<th>12ª</th>
+								<th>13ª</th>
+								<th>14ª</th>
+								<th>15ª</th>
+								<th>16ª</th>
+								<th>17ª</th>
+								<th>18ª</th>
+								<th>19ª</th>
+								<th>20ª</th>
+								<th>21ª</th>
+								<th>22ª</th>
+								<th>23ª</th>
+								<th>24ª</th>
+								<th>MÉDIA (%)</th>
+			</tr>
+		</thead>
+		<tbody>
+												<tr>
+				<td class="text-left">POVO PITAGUARI EMIEB DO</td>
+												<th  class="mark" >0,0</th>
+																<th >9,0</th>
+																<th >45,4</th>
+																<th  class="mark" >0,0</th>
+																<th  class="mark" >0,0</th>
+																<th  class="mark" >0,0</th>
+																<th >90,9</th>
+																<th >90,9</th>
+																<th >100,0</th>
+																<th >100,0</th>
+																<th  class="mark" >0,0</th>
+																<th >9,0</th>
+																<th >81,8</th>
+																<th >100,0</th>
+																<th  class="mark" >0,0</th>
+																<th  class="mark" >0,0</th>
+																<th >100,0</th>
+																<th  class="mark" >0,0</th>
+																<th  class="mark" >0,0</th>
+																<th  class="mark" >0,0</th>
+																<th >81,8</th>
+																<th >81,8</th>
+																<th  class="mark" >0,0</th>
+																<th  class="mark" >0,0</th>
+																<th>37,1</th>
+			</tr>
+									<tr>
+				<th class="border-none" colspan="25"><br></th>
+			</tr>
+			<tr>
+				<th class="text-left bg-grey" rowspan="2">MÉDIA TOTAL ACERTOS (%)</th>
+								<th class="bg-grey">D3</th>
+								<th class="bg-grey">D25</th>
+								<th class="bg-grey">D28</th>
+								<th class="bg-grey">D15</th>
+								<th class="bg-grey">D13</th>
+								<th class="bg-grey">D28</th>
+								<th class="bg-grey">D8</th>
+								<th class="bg-grey">D20</th>
+								<th class="bg-grey">D11</th>
+								<th class="bg-grey">D26</th>
+								<th class="bg-grey">D16</th>
+								<th class="bg-grey">D8</th>
+								<th class="bg-grey">D26</th>
+								<th class="bg-grey">D4</th>
+								<th class="bg-grey">D12</th>
+								<th class="bg-grey">D14</th>
+								<th class="bg-grey">D13</th>
+								<th class="bg-grey">D27</th>
+								<th class="bg-grey">D15</th>
+								<th class="bg-grey">D13</th>
+								<th class="bg-grey">D30</th>
+								<th class="bg-grey">D24</th>
+								<th class="bg-grey">D25*</th>
+								<th class="bg-grey">D36</th>
+								<th class="bg-grey">
+					MÉDIA
+				</th>
+			</tr>
+			<tr>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th >
+					9,0
+				</th>
+								<th >
+					45,4
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th >
+					90,9
+				</th>
+								<th >
+					90,9
+				</th>
+								<th >
+					100,0
+				</th>
+								<th >
+					100,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th >
+					9,0
+				</th>
+								<th >
+					81,8
+				</th>
+								<th >
+					100,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th >
+					100,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th >
+					81,8
+				</th>
+								<th >
+					81,8
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th  class="mark" >
+					0,0
+				</th>
+								<th>37,1</th>
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+	<div class="page-break"></div>
+	<table class="w-100">
+		<tbody>
+			<tr>
+				<td style="vertical-align: super;">
+					<table class="table-body border-none w-100">
+						<thead>
+							<tr class="bg-grey">
+								<th>DESCRITOR</th>
+								<th>Nº QUESTÃO</th>
+								<th>MÉDIA ACERTOS (%)</th>
+							</tr>
+						</thead>
+						<body>
+														<tr>
+								<th>D11</th>
+								<th>9</th>
+								<th>100,00</th>
+							</tr>	
+														<tr>
+								<th>D26</th>
+								<th>10</th>
+								<th>100,00</th>
+							</tr>	
+														<tr>
+								<th>D4</th>
+								<th>14</th>
+								<th>100,00</th>
+							</tr>	
+														<tr>
+								<th>D13</th>
+								<th>17</th>
+								<th>100,00</th>
+							</tr>	
+														<tr>
+								<th>D20</th>
+								<th>8</th>
+								<th>90,90</th>
+							</tr>	
+														<tr>
+								<th>D8</th>
+								<th>7</th>
+								<th>90,90</th>
+							</tr>	
+														<tr>
+								<th>D24</th>
+								<th>22</th>
+								<th>81,81</th>
+							</tr>	
+														<tr>
+								<th>D30</th>
+								<th>21</th>
+								<th>81,81</th>
+							</tr>	
+														<tr>
+								<th>D26</th>
+								<th>13</th>
+								<th>81,81</th>
+							</tr>	
+														<tr>
+								<th>D28</th>
+								<th>3</th>
+								<th>45,45</th>
+							</tr>	
+														<tr>
+								<th>D8</th>
+								<th>12</th>
+								<th>9,09</th>
+							</tr>	
+														<tr>
+								<th>D25</th>
+								<th>2</th>
+								<th>9,09</th>
+							</tr>	
+														<tr>
+								<th>D15</th>
+								<th>4</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D13</th>
+								<th>20</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D25*</th>
+								<th>23</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D36</th>
+								<th>24</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D15</th>
+								<th>19</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D27</th>
+								<th>18</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D28</th>
+								<th>6</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D16</th>
+								<th>11</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D12</th>
+								<th>15</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D14</th>
+								<th>16</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D13</th>
+								<th>5</th>
+								<th>0,00</th>
+							</tr>	
+														<tr>
+								<th>D3</th>
+								<th>1</th>
+								<th>0,00</th>
+							</tr>	
+													</body>
+					</table>
+				</td>
+				<td style="vertical-align: super; padding-left: 20px;">
+					<table class="table-footer w-100">
+						<thead>
+							<tr class="bg-grey">
+								<th colspan="1">RELAÇÃO DE DESCRITORES UTILIZADOS NA AVALIAÇÃO</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+																<td>
+									<table>
+										<tbody>
+																						<tr>
+												<td style="width: max-content;"><b>D11</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Reconhecer c&iacute;rculo/circunfer&ecirc;ncia, seus elementos e algumas de suas rela&ccedil;&otilde;es. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D12</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema envolvendo o c&aacute;lculo de per&iacute;metro de figuras planas. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D13</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema envolvendo o c&aacute;lculo de &aacute;rea de figuras planas. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D14</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema envolvendo no&ccedil;&otilde;es de volume. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D15</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema utilizando a adi&ccedil;&atilde;o ou subtra&ccedil;&atilde;o com n&uacute;meros racionais representados na forma fracion&aacute;ria (mesmo denominador ou denominadores diferentes) ou na forma decimal. -SPAECE</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D15</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema utilizando rela&ccedil;&otilde;es entre diferentes unidades de medida. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D16</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Identificar a localiza&ccedil;&atilde;o de n&uacute;meros inteiros na reta num&eacute;rica. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D20</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema com n&uacute;meros inteiros envolvendo as opera&ccedil;&otilde;es (adi&ccedil;&atilde;o, subtra&ccedil;&atilde;o, multiplica&ccedil;&atilde;o, divis&atilde;o, potencia&ccedil;&atilde;o). -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D24</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Fatorar e simplificar express&otilde;es alg&eacute;bricas. -SPAECE</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D25</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver situa&ccedil;&atilde;o-problema que envolva equa&ccedil;&otilde;es de 1&ordm; grau. -SPAECE</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D25*</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Efetuar c&aacute;lculos que envolvam opera&ccedil;&otilde;es com n&uacute;meros racionais (adi&ccedil;&atilde;o, subtra&ccedil;&atilde;o, multiplica&ccedil;&atilde;o, divis&atilde;o, potencia&ccedil;&atilde;o). -SAEB*</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D26</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema com n&uacute;meros racionais envolvendo as opera&ccedil;&otilde;es (adi&ccedil;&atilde;o, subtra&ccedil;&atilde;o, multiplica&ccedil;&atilde;o, divis&atilde;o, potencia&ccedil;&atilde;o). -SAEB
+</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D27</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver situa&ccedil;&atilde;o-problema envolvendo sistema de equa&ccedil;&otilde;es do 1&ordm; grau. -SPAECE
+</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D28</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema que envolva porcentagem. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D3</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Identificar propriedades de tri&acirc;ngulos pela compara&ccedil;&atilde;o de medidas de lados e &acirc;ngulos. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D30</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Calcular o valor num&eacute;rico de uma express&atilde;o alg&eacute;brica. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D36</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema envolvendo informa&ccedil;&otilde;es apresentadas em tabelas e/ou gr&aacute;ficos. -SAEB</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D4</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Identificar rela&ccedil;&atilde;o entre quadril&aacute;teros por meio de suas propriedades. -SAEB
+</td>
+											</tr>
+																						<tr>
+												<td style="width: max-content;"><b>D8</b></td>
+												<td style="width: 7px;">-</td>
+												<td class="text-left text-lowercase">Resolver problema utilizando propriedades dos pol&iacute;gonos (soma de seus &acirc;ngulos internos, n&uacute;mero de diagonais, c&aacute;lculo da medida de cada &acirc;ngulo interno nos pol&iacute;gonos regulares). -SAEB</td>
+											</tr>
+																					</tbody>
+									</table>
+								</td>
+															</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
