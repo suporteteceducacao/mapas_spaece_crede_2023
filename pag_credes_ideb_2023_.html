@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapas Cloropléticos Interativos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- links -->
+  <link rel="stylesheet" href="css/loader6.css">
+  <link rel="shortcut icon" href="img/icons8-matemática-50.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+   .card:hover .card-img-top {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+.modal-body img {
+      user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- início do preloader -->
+  <!--<div id="preloader">
+    <div class="inner">
+      <div class="loader">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+  </div>-->
+  <!-- fim do preloader -->
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Mapas Cloropléticos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mapas Cloropléticos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Artigo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Modal -->
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">Informações Adicionais</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Esta página tem por objetivo disponibilizar relatórios em formato dinâmico e visual - mapas coropléticos - dos resultados públicos do <b>SAEB 2023</b>, os quais estão disponíveis na página oficial da INEP/SAEB, através do site: <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb/resultados" target="_blank">https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb/resultados</a>.</p>
+          <p class="text-dark text-right"><b>Equipe Técnica</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container my-1">
+      <section class="hero bg-dark text-white py-3 px-3">
+        <div class="container">
+          <h1 class="display-4">Explore Mapas Cloropléticos Interativos</h1>
+          <p class="lead">Relatórios técnicos de maneira visual e interativa.</p>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#infoModal">Saiba mais</button>
+        </div>
+      </section>
+
+      <!-- Abas para 2022 e 2023 -->
+      <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="2023-tab" data-toggle="tab" href="#ano2023" role="tab" aria-controls="ano2023" aria-selected="true">ANOS INCIAIS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="2022-tab" data-toggle="tab" href="#ano2022" role="tab" aria-controls="ano2022" aria-selected="false">ANOS FINAIS</a>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="myTabContent">
+        <!-- Conteúdo da aba 2023 -->
+        <div class="tab-pane fade show active" id="ano2023" role="tabpanel" aria-labelledby="2023-tab">
+          <section class="maps py-5" id="pdf" data-aos="fade-up">
+            <div class="container">
+              <h2 class="mb-4 text-center bg-light">Mapas Cloropléticos por CREDES - IDEB 2023 | 5° ANO -  ANOS INICIAS</h2>
+             <div class="row" >
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_ACARAÚ_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_ACARAÚ_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_ACARAÚ_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_ACARAÚ_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_BATURITÉ_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_BATURITÉ_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_BATURITÉ_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_BATURITÉ_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_BREJO SANTO_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_BREJO SANTO_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_BREJO SANTO_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_BREJO SANTO_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_CAMOCIM_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_CAMOCIM_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_CAMOCIM_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_CAMOCIM_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_CRATÉUS_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_CRATÉUS_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_CRATÉUS_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_CRATÉUS_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_CRATO_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_CRATO_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_CRATO_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_CRATO_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_FORTALEZA_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_FORTALEZA_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_FORTALEZA_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_FORTALEZA_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_HORIZONTE_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_HORIZONTE_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_HORIZONTE_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_HORIZONTE_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_ICO_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_ICO_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_ICO_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_ICO_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_IGUATU_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_IGUATU_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_IGUATU_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_IGUATU_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_ITAPIPOCA_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_ITAPIPOCA_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_ITAPIPOCA_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_ITAPIPOCA_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_JAGUARIBE_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_JAGUARIBE_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_JAGUARIBE_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_JAGUARIBE_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_JUAZEIRO DO NORTE_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_JUAZEIRO DO NORTE_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_JUAZEIRO DO NORTE_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_JUAZEIRO DO NORTE_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_MARACANAÚ_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_MARACANAÚ_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_MARACANAÚ_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_MARACANAÚ_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_QUIXADÁ_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_QUIXADÁ_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_QUIXADÁ_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_QUIXADÁ_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_RUSSAS_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_RUSSAS_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_RUSSAS_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_RUSSAS_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_SENADOR POMPEU_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_SENADOR POMPEU_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_SENADOR POMPEU_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_SENADOR POMPEU_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_SOBRAL_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_SOBRAL_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_SOBRAL_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_SOBRAL_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_TAUÁ_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_TAUÁ_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_TAUÁ_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_TAUÁ_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_TIANGUÁ_mapa_ideb_AI.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_TIANGUÁ_mapa_ideb_AI</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_TIANGUÁ_mapa_ideb_AI.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_TIANGUÁ_mapa_ideb_AI.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+        </div>
+
+        <!-- Conteúdo da aba 2022 -->
+        <div class="tab-pane fade" id="ano2022" role="tabpanel" aria-labelledby="2022-tab">
+          <section class="maps py-5" id="pdf" data-aos="fade-up">
+            <div class="container">
+              <h2 class="mb-4 text-center bg-light">Mapas Cloropléticos por CREDES - IDEB 2023 | 9° ANO -  ANOS FINAIS</h2>
+              <div class="row">
+           <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_ACARAÚ_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_ACARAÚ_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_ACARAÚ_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_ACARAÚ_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_BATURITÉ_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_BATURITÉ_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_BATURITÉ_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_BATURITÉ_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_BREJO SANTO_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_BREJO SANTO_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_BREJO SANTO_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_BREJO SANTO_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_CAMOCIM_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_CAMOCIM_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_CAMOCIM_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_CAMOCIM_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_CRATÉUS_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_CRATÉUS_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_CRATÉUS_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_CRATÉUS_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_CRATO_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_CRATO_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_CRATO_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_CRATO_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_FORTALEZA_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_FORTALEZA_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_FORTALEZA_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_FORTALEZA_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_HORIZONTE_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_HORIZONTE_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_HORIZONTE_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_HORIZONTE_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_ICO_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_ICO_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_ICO_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_ICO_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_IGUATU_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_IGUATU_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_IGUATU_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_IGUATU_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_ITAPIPOCA_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_ITAPIPOCA_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_ITAPIPOCA_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_ITAPIPOCA_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_JAGUARIBE_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_JAGUARIBE_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_JAGUARIBE_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_JAGUARIBE_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_JUAZEIRO DO NORTE_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_JUAZEIRO DO NORTE_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_JUAZEIRO DO NORTE_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_JUAZEIRO DO NORTE_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_MARACANAÚ_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_MARACANAÚ_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_MARACANAÚ_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_MARACANAÚ_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_QUIXADÁ_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_QUIXADÁ_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_QUIXADÁ_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_QUIXADÁ_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_RUSSAS_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_RUSSAS_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_RUSSAS_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_RUSSAS_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_SENADOR POMPEU_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_SENADOR POMPEU_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_SENADOR POMPEU_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_SENADOR POMPEU_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_SOBRAL_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_SOBRAL_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_SOBRAL_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_SOBRAL_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card">
+               <img src="img_ideb/CREDE_TAUÁ_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_TAUÁ_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_TAUÁ_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_TAUÁ_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-3 mb-3">
+             <div class="card">
+               <img src="img_ideb/CREDE_TIANGUÁ_mapa_ideb_AF.png" class="card-img-top" alt="Mapa 2">
+              <div class="card-body">
+                <h5 class="card-title">CREDES</h5>
+                <p class="card-text">CREDE_TIANGUÁ_mapa_ideb_AF</p>
+                <p class="card-text"><small class="text-muted">Fonte: INEP/SAEB 2023 </small></p>
+                <a href="#" class="btn btn-primary" onclick="showFile('img_ideb/CREDE_TIANGUÁ_mapa_ideb_AF.png')">Visualizar</a>
+                <a href="img_ideb/CREDE_TIANGUÁ_mapa_ideb_AF.png" download class="btn btn-outline-info" target="_blank">arquivo <i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="fileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="fileModalLabel">Visualização do Arquivo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="fileContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+   </div>
+  </div>
+  </main>
+  </main>
+
+  <footer class="bg-dark text-white py-4" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2024 Mapas Cloropléticos. Todos os direitos reservados.</p>
+        </div>
+        <div class="col-md-6 text-md-right">
+           <p>e-mail: suporteteceducacao@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script>
+    function showFile(filePath) {
+      var fileType = filePath.split('.').pop();
+      var fileContainer = document.getElementById('fileContainer');
+
+      if (fileType === 'pdf') {
+        fileContainer.innerHTML = '<iframe src="' + filePath + '" width="100%" height="500px" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>';
+      } else if (fileType === 'jpeg' || fileType === 'jpg' || fileType === 'png') {
+        fileContainer.innerHTML = '<img src="' + filePath + '" class="img-fluid" oncontextmenu="return false;">';
+      }
+
+      $('#fileModal').modal('show');
+    }
+
+    function viewFile(fileUrl) {
+  window.open(fileUrl, '_blank');
+}
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+  AOS.init();
+</script>
+
+    <script src="js/loader.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/cookies.js"></script>
+
+</body>
+</html>    
